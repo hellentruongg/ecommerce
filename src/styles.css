@@ -3,3 +3,36 @@
 body {
   font-family: sans-serif;
 }
+
+form input,
+form button {
+  padding: 6px 12px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+form > input {
+  background-color: #fff;
+  flex: 1; /* fyller tillgängligt utrymme */
+}
+
+form button {
+  background-color: #212529;
+  color: #fff;
+  border-color: #212529;
+  cursor: pointer;
+}

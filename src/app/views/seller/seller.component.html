@@ -1,1 +1,26 @@
-<p>seller works!</p>
+<main>
+  <div>
+    <h2>Sign up</h2>
+    <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value)">
+      <input type="text" placeholder="Enter name..." name="name" ngModel />
+      <input
+        type="password"
+        placeholder="Enter password..."
+        name="password"
+        ngModel
+      />
+      <input type="text" placeholder="Enter email" name="email" ngModel />
+      <button type="submit">Sign up</button>
+    </form>
+  </div>
+</main>
+
+<!--
+TÄNK PÅ
+- Att lokal namn kan ges till html-element genom att skriva #vilketNamnDuVill
+- Att lokal namn används för att läsa av elementets egenskaper (såsom value, checked, disabled) eller metoder (såsom focus() och blur()) i template
+- Att lokal namn kan kopplas till Angular directive istället för själva html-elementet
+- Att ngForm skapas automatiskt och kopplas till alla <form> när FormsModule importeras
+- Att ngForm skapar en FormGroup-liknande objekt och håller koll på formulärets status, exempelvis om formuläret är giltigt (valid), ogiltig (invalid), ändrat (dirt) och rört (touched)
+- Att ngModel registrerar sitt formcontrol-element och dess name i ngForm (name måste finnas)
+-->
