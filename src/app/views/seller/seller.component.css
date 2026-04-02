@@ -6,3 +6,14 @@ main {
 h2 {
   text-align: center;
 }
+
+form p {
+  font-size: 14px;
+  color: #212529;
+  text-align: center;
+}
+
+form a {
+  color: #305cde;
+  cursor: pointer;
+}

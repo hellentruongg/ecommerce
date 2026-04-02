@@ -1,7 +1,7 @@
 <main>
-  <div>
-    <h2>Sign up</h2>
-    <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value)">
+  <div *ngIf="!showLogin">
+    <h2>Seller Signup</h2>
+    <form #sellerSignup="ngForm" (ngSubmit)="signUp(sellerSignup.value)">
       <input type="text" placeholder="Enter name..." name="name" ngModel />
       <input
         type="password"
@@ -11,6 +11,23 @@
       />
       <input type="text" placeholder="Enter email" name="email" ngModel />
       <button type="submit">Sign up</button>
+      <p>Already have an account? <a (click)="toggleLogin()">Log in</a></p>
+    </form>
+  </div>
+
+  <div *ngIf="showLogin">
+    <h2>Seller Login</h2>
+    <form #sellerLogin="ngForm" (ngSubmit)="logIn(sellerLogin.value)">
+      <input type="text" placeholder="Enter email" name="email" ngModel />
+      <input
+        type="password"
+        placeholder="Enter password..."
+        name="password"
+        ngModel
+      />
+
+      <button type="submit">Log in</button>
+      <p>Don't have an account? <a (click)="toggleLogin()">Sign up</a></p>
     </form>
   </div>
 </main>

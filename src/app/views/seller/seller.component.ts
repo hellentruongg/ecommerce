@@ -3,14 +3,17 @@ import { FormsModule } from '@angular/forms';
 import { SellerService } from '../../services/seller.service';
 import { Account } from '../../models/account';
 import { Router } from '@angular/router';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-seller',
-  imports: [FormsModule],
+  imports: [FormsModule, NgIf],
   templateUrl: './seller.component.html',
   styleUrl: './seller.component.css',
 })
 export class SellerComponent implements OnInit {
+  showLogin = false;
+
   constructor(
     private sellerService: SellerService,
     private router: Router,
@@ -38,6 +41,23 @@ export class SellerComponent implements OnInit {
         this.router.navigate(['seller-account']);
       }
     });
+  }
+
+  logIn(data: Account): void {
+    console.warn(data);
+
+    // WITH AUTH GUARD
+    // this.sellerService.signUp(data).subscribe((result) => {
+    //   if (result) {
+    //     localStorage.setItem('seller', JSON.stringify(result));
+
+    //     this.router.navigate(['seller-account']);
+    //   }
+    // });
+  }
+
+  toggleLogin() {
+    this.showLogin = !this.showLogin;
   }
 }
 
