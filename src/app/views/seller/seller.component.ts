@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { SellerService } from '../../services/seller.service';
+import { Account } from '../../models/account';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-seller',
@@ -8,7 +11,17 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './seller.component.css',
 })
 export class SellerComponent {
-  signUp(data: object): void {
-    console.warn(data);
+  constructor(
+    private sellerService: SellerService,
+    private router: Router,
+  ) {}
+
+  signUp(data: Account): void {
+    // console.warn(data);
+    this.sellerService.userSignUp(data).subscribe((result) => {
+      if (result) {
+        this.router.navigate(['seller-account']);
+      }
+    });
   }
 }
