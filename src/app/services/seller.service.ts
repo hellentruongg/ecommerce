@@ -1,15 +1,27 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Account } from '../models/account';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SellerService {
-  constructor(private httpClient: HttpClient) {}
+  constructor(
+    private httpClient: HttpClient,
+    private router: Router,
+  ) {}
 
-  userSignUp(data: Account) {
+  signUp(data: Account) {
     return this.httpClient.post('http://localhost:3000/seller', data);
+  }
+
+  reloadPage() {
+    const seller = localStorage.getItem('seller');
+
+    if (seller) {
+      this.router.navigate(['seller-account']);
+    }
   }
 }
 
