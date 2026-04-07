@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SellerService } from '../../services/seller.service';
-import { Account } from '../../models/account';
+import { Login, Signup } from '../../models/account';
 import { Router } from '@angular/router';
 import { NgIf } from '@angular/common';
 
@@ -13,6 +13,7 @@ import { NgIf } from '@angular/common';
 })
 export class SellerComponent implements OnInit {
   showLogin = false;
+  loginError: string = '';
 
   constructor(
     private sellerService: SellerService,
@@ -23,17 +24,17 @@ export class SellerComponent implements OnInit {
     this.sellerService.reloadPage();
   }
 
-  signUp(data: Account): void {
+  signUp(data: Signup): void {
     // console.warn(data);
 
-    // WITHOUT AUTH GUARD
+    // UTAN AUTH GUARD
     // this.sellerService.userSignUp(data).subscribe((result) => {
     //   if (result) {
     //     this.router.navigate(['seller-account']);
     //   }
     // });
 
-    // WITH AUTH GUARD
+    // MED AUTH GUARD
     this.sellerService.signUp(data).subscribe((result) => {
       if (result) {
         localStorage.setItem('seller', JSON.stringify(result));
@@ -43,20 +44,27 @@ export class SellerComponent implements OnInit {
     });
   }
 
-  logIn(data: Account): void {
-    console.warn(data);
+  logIn(data: Login): void {
+    // console.warn(data);
+    // this.sellerService.logIn(data);
 
     // WITH AUTH GUARD
-    // this.sellerService.signUp(data).subscribe((result) => {
-    //   if (result) {
-    //     localStorage.setItem('seller', JSON.stringify(result));
+    this.loginError = ''; // rensa gammalt error
 
-    //     this.router.navigate(['seller-account']);
-    //   }
-    // });
+    this.sellerService.logIn(data).subscribe((result: any) => {
+      if (result && result.length === 1) {
+        console.warn(result);
+
+        localStorage.setItem('seller', JSON.stringify(result[0]));
+        this.router.navigate(['seller-account']);
+      } else {
+        this.loginError = 'Fel email eller lösenord';
+        console.warn(this.loginError);
+      }
+    });
   }
 
-  toggleLogin() {
+  toggleForm() {
     this.showLogin = !this.showLogin;
   }
 }
@@ -73,6 +81,7 @@ TÄNK PÅ
 - Att auth guard är ett koncept där man skyddar sidor från obehöriga, t.ex mina sidor ska vara otillgänglig för alla utom användaren själv
 
 - Att komponenter har en livscykel; den börjar när komponenten skapas och slutar när den tas bort från DOM
-- Att OnInit är en livecycle-hook som används för att lyssna på när komponenten laddas in
-- Att ngOnInit() körs en gång efter att Angular har skapat komponenten och satt alla @Input()-värden
+- Att OnInit är en lifecycle-hook som används för att lyssna på när komponenten laddas in
+- Att ngOnInit() körs en gång EFTER att Angular har skapat komponenten och satt alla @Input()-värden
+- Att komponent skapas när komponenten används i en template (<app-user></app-user>) eller när man navigerar till en route som pekar på komponenten
 */

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Account } from '../models/account';
+import { Login, Signup } from '../models/account';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -12,8 +12,16 @@ export class SellerService {
     private router: Router,
   ) {}
 
-  signUp(data: Account) {
+  signUp(data: Signup) {
     return this.httpClient.post('http://localhost:3000/seller', data);
+  }
+
+  logIn(data: Login) {
+    console.warn(data);
+
+    return this.httpClient.get(
+      `http://localhost:3000/seller?email=${data.email}&password=${data.password}`,
+    );
   }
 
   reloadPage() {

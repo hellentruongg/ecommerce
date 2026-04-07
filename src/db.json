@@ -1,28 +1,16 @@
 {
   "seller": [
     {
-      "id": "1482",
-      "name": "Jane Doe",
-      "email": "jane@seller.com",
-      "password": "abc123"
-    },
-    {
       "id": "cee9",
       "name": "John Doe",
       "password": "12345",
       "email": "john@test.com"
     },
     {
-      "id": "32c2",
-      "name": "Jill Doe",
+      "id": "091a",
+      "name": "Jane ",
       "password": "12345",
-      "email": "jill@test.com"
-    },
-    {
-      "id": "3539",
-      "name": "Jake Doe",
-      "password": "12345",
-      "email": "jake@test.com"
+      "email": "jane@test.com"
     }
   ]
 }
