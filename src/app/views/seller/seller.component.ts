@@ -37,7 +37,8 @@ export class SellerComponent implements OnInit {
     // MED AUTH GUARD
     this.sellerService.signUp(data).subscribe((result) => {
       if (result) {
-        localStorage.setItem('seller', JSON.stringify(result));
+        // localStorage.setItem('seller', JSON.stringify(result));
+        this.sellerService.user = result;
 
         this.router.navigate(['seller-account']);
       }
@@ -52,14 +53,14 @@ export class SellerComponent implements OnInit {
     this.loginError = ''; // rensa gammalt error
 
     this.sellerService.logIn(data).subscribe((result: any) => {
-      if (result && result.length === 1) {
-        console.warn(result);
-
-        localStorage.setItem('seller', JSON.stringify(result[0]));
+      if (result.length === 1) {
+        // console.warn(result);
+        // localStorage.setItem('seller', JSON.stringify(result[0]));
+        this.sellerService.user = result[0];
         this.router.navigate(['seller-account']);
       } else {
         this.loginError = 'Fel email eller lösenord';
-        console.warn(this.loginError);
+        // console.warn(this.loginError);
       }
     });
   }
