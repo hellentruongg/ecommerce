@@ -1,18 +1,18 @@
-header {
+.header {
   max-width: 1440px;
   margin: 0 auto;
 }
 
-h1 a {
-  color: #212529;
-  text-decoration: none;
-}
-
-nav {
+.nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+}
+
+.nav__logo a {
+  color: #212529;
+  text-decoration: none;
 }
 
 .nav__search {
@@ -21,8 +21,8 @@ nav {
   max-width: 500px;
 }
 
-nav input,
-nav button {
+.nav__search-input,
+.nav__search-btn {
   padding: 6px 12px;
   font-size: 16px;
   font-weight: 400;
@@ -32,36 +32,36 @@ nav button {
   border: 1px solid #ced4da;
 }
 
-nav input {
+.nav__search-input {
   background-color: #fff;
   border-radius: 4px 0 0 4px;
   flex: 1; /* fyller tillgängligt utrymme */
 }
 
-nav input:focus {
+.nav__search-input:focus {
   outline: 2px solid #212529;
   outline-offset: -2px;
 }
 
-nav button {
+.nav__search-btn {
   background-color: #212529;
   color: #fff;
   border-color: #212529;
   border-radius: 0 4px 4px 0;
 }
 
-nav ul {
+.nav__links {
   display: inline-flex;
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
 
-nav ul li {
+.nav__link {
   padding-left: 16px;
 }
 
-nav ul li a {
+.nav__link a {
   text-decoration: none;
   color: #212529;
 }
