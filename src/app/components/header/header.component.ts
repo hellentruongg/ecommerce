@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class HeaderComponent implements OnInit {
   menu: string = 'default';
+  sellerName: string = '';
 
   constructor(
     private router: Router,
@@ -22,14 +23,21 @@ export class HeaderComponent implements OnInit {
       if (val.url) {
         // console.warn(val.url);
         if (this.sellerService.user && val.url.includes('seller')) {
-          console.warn('this is inside seller page');
+          // console.warn('this is inside seller page');
+
+          this.sellerName = JSON.parse(this.sellerService.user).name;
           this.menu = 'seller';
         } else {
-          console.warn('this is outside seller page');
+          // console.warn('this is outside seller page');
           this.menu = 'default';
         }
       }
     });
+  }
+
+  logOut() {
+    this.sellerService.user = null;
+    this.router.navigate(['/']);
   }
 }
 

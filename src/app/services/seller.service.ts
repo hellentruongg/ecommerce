@@ -23,6 +23,8 @@ export class SellerService {
   set user(user: any) {
     if (user) {
       localStorage.setItem('seller', JSON.stringify(user));
+    } else {
+      localStorage.removeItem('seller');
     }
   }
 
