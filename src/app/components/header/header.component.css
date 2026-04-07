@@ -3,6 +3,11 @@ header {
   margin: 0 auto;
 }
 
+h1 a {
+  color: #212529;
+  text-decoration: none;
+}
+
 nav {
   display: flex;
   align-items: center;
@@ -10,7 +15,7 @@ nav {
   gap: 1rem;
 }
 
-nav div {
+.nav__search {
   display: flex; /* betyder flex-grow: 1, flex-shink: 1, flex-basis: auto*/
   flex: 1; /* gör att sökfältet kan växa */
   max-width: 500px;
