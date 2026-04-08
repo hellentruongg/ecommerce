@@ -19,8 +19,10 @@
         <li class="nav__link"><a href="#">Cart(0)</a></li>
       </ul>
       <ul *ngSwitchCase="'seller'" class="nav__links">
-        <li class="nav__link"><a routerLink="seller">Add product</a></li>
-        <li class="nav__link"><a routerLink="">View list</a></li>
+        <li class="nav__link">
+          <a routerLink="seller-add-product">Add product</a>
+        </li>
+        <li class="nav__link"><a routerLink="seller-account">View list</a></li>
         <li class="nav__link"><a (click)="logOut()">Log out</a></li>
         <li class="nav__link">
           <a href="#">{{ sellerName }}</a>
