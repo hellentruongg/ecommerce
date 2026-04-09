@@ -1,6 +1,9 @@
 <main>
   <div class="form">
     <h2 class="form__title">Add new product</h2>
+    <p *ngIf="formMessage" class="success">
+      {{ formMessage }}
+    </p>
     <form
       #sellerAddProduct="ngForm"
       (ngSubmit)="addProduct(sellerAddProduct.value)"

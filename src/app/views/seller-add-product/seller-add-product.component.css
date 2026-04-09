@@ -4,3 +4,8 @@
   align-items: center;
   flex-grow: 1;
 }
+
+.success {
+  color: #22c55e;
+  text-align: center;
+}

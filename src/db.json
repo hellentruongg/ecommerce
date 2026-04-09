@@ -12,5 +12,16 @@
       "password": "12345",
       "email": "jane@test.com"
     }
+  ],
+  "products": [
+    {
+      "id": "a397",
+      "name": "coat",
+      "price": "139",
+      "category": "coats",
+      "color": "red",
+      "description": "red coat with buttons",
+      "image": "https://shorturl.at/mMqcP"
+    }
   ]
 }
