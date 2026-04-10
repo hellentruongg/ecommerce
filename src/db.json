@@ -22,6 +22,15 @@
       "color": "red",
       "description": "red coat with buttons",
       "image": "https://shorturl.at/mMqcP"
+    },
+    {
+      "id": "cdc4",
+      "name": "jeans",
+      "price": "49",
+      "category": "bottoms",
+      "color": "blue",
+      "description": "mid-blue straight jeans",
+      "image": "https://shorturl.at/EouDO"
     }
   ]
 }

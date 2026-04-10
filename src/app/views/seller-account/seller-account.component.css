@@ -37,3 +37,8 @@ table td img {
   width: 60px;
   height: auto;
 }
+
+.success {
+  color: #22c55e;
+  text-align: center;
+}
