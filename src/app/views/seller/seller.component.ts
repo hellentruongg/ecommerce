@@ -74,10 +74,16 @@ export class SellerComponent implements OnInit {
 TÄNK PÅ
 - Att HttpClient en inbyggd service i Angular
 - Att HttpClient används för att göra HTTP-anrop, t.ex. GET, POST, PUT, DELETE
-- Att http-anrop returnerar ett Observable som kommer ge datan senare, inte själva datan direkt
+- Att get() returnerar en Observable som kommer ge datan senare/i framtiden, inte själva datan direkt
 - Att observable är ett objekt som ger data över tid
-- Att subscribe() är obligatorisk och används för att lyssna på resultatet av http-förfrågan; man "prenumererar" på Observable
-- Att subscribe() tar in en callback som används för att hantera resultatet av http-förfrågan; callbacken körs när resultatet har tagits emot
+- Att subscribe() är obligatorisk och används för att "prenumererar" på Observable: man väntar på inkommande data
+- Att subscribe() tar in en callback som används för att hantera datan; callbacken körs när datan fångas/tas emot
+- Att en Observable är som en kran (= rör som leder vatten), subscribe() är som ett handtag vriden uppåt (= öppen kran) och data är som vatten ut från kranen
+- Att subscribe() kan ta in en Observer-objekt istället för callback
+- Att Observer-objekt innehåller egenskaperna next, error och complete; vardera innehåller en funktion
+- Att next körs när data kommer (200 ok)
+- Att error körs om något går fel ()
+- Att complete kör när allt är klart (denna körs efter next)
 
 - Att auth guard är ett koncept där man skyddar sidor från obehöriga, t.ex mina sidor ska vara otillgänglig för alla utom användaren själv
 

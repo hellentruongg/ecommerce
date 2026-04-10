@@ -1,0 +1,39 @@
+:host {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-grow: 1;
+}
+
+main div {
+  margin: 0 auto;
+  /* max-width: 800px; */
+}
+
+h2 {
+  text-align: center;
+  margin-top: 80px;
+}
+
+table {
+  text-align: left;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table td,
+table th {
+  /* border: 1px solid #212529; */
+  padding: 10px;
+}
+
+table th {
+  background-color: #212529;
+  color: #fff;
+}
+
+table td img {
+  max-width: 100%;
+  width: 60px;
+  height: auto;
+}
