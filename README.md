@@ -1,4 +1,4 @@
-# Angular Ecommerce Project (work in progess)
+# Angular E-Commerce Project (work in progess)
 
 This project is currently under development as part of my learning journey in Angular.
 
