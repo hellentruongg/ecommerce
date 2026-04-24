@@ -12,38 +12,38 @@
         type="text"
         placeholder="Enter product name..."
         name="name"
-        ngModel
+        ngModel="{{ product?.name }}"
       />
       <input
         type="text"
         placeholder="Enter product price..."
         name="price"
-        ngModel
+        ngModel="{{ product?.price }}"
       />
       <input
         type="text"
         placeholder="Enter product category..."
         name="category"
-        ngModel
+        ngModel="{{ product?.category }}"
       />
       <input
         type="text"
         placeholder="Enter product color..."
         name="color"
-        ngModel
+        ngModel="{{ product?.color }}"
       />
       <textarea
         type="text"
         placeholder="Enter product description..."
         name="description"
-        ngModel
+        ngModel="{{ product?.description }}"
       ></textarea>
 
       <input
         type="text"
         placeholder="Enter product image URL..."
         name="image"
-        ngModel
+        ngModel="{{ product?.image }}"
       />
       <button type="submit">Update product</button>
     </form>
