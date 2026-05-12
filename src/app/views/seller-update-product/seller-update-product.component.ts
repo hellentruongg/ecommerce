@@ -3,15 +3,17 @@ import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/product';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-seller-update-product',
-  imports: [FormsModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './seller-update-product.component.html',
   styleUrl: './seller-update-product.component.css',
 })
 export class SellerUpdateProductComponent implements OnInit {
   product: Product | undefined;
+  formMessage: string | undefined;
 
   constructor(
     private route: ActivatedRoute,
@@ -29,7 +31,23 @@ export class SellerUpdateProductComponent implements OnInit {
       });
     }
   }
-  updateProduct(data: any) {}
+  updateProduct(data: any) {
+    if (this.product) {
+      data.id = this.product.id;
+    }
+
+    this.productService.updateProduct(data).subscribe((result) => {
+      if (result) {
+        this.formMessage = 'Product has updated successfully';
+      }
+    });
+
+    setTimeout(() => {
+      this.formMessage = undefined;
+    }, 3000);
+
+    console.warn(data);
+  }
 }
 
 /*

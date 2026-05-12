@@ -15,13 +15,13 @@
   ],
   "products": [
     {
-      "id": "15e1",
       "name": "coat",
-      "price": "145",
+      "price": "147",
       "category": "coats",
       "color": "red",
       "description": "red coat with buttons",
-      "image": "https://shorturl.at/mMqcP"
+      "image": "https://shorturl.at/mMqcP",
+      "id": "15e1"
     },
     {
       "id": "cdc4",
@@ -31,6 +31,15 @@
       "color": "blue",
       "description": "mid-blue straight jeans",
       "image": "https://shorturl.at/EouDO"
+    },
+    {
+      "name": "t-shirt",
+      "price": "199",
+      "category": "tops",
+      "color": "gray",
+      "description": "gray linen t-shirt ",
+      "image": "https://shorturl.at/y3FIO",
+      "id": "78fd"
     }
   ]
 }

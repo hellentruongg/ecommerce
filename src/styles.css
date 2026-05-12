@@ -62,3 +62,8 @@ form button {
   border-color: #212529;
   cursor: pointer;
 }
+
+.form__message--success {
+  color: #22c55e;
+  text-align: center;
+}
